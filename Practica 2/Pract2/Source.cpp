@@ -1,5 +1,5 @@
 #include <iostream>
-#include "funciones.h"
+#include "CMatFloat.h"
 
 using namespace std;
 void menu();

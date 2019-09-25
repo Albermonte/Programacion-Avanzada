@@ -1,4 +1,4 @@
-#include "funciones.h"
+#include "CMatFloat.h"
 //#include <cstddef>�
 #include <iostream>     // std::cout
 #include <new>          // std::bad_alloc

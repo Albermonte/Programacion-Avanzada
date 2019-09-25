@@ -9,14 +9,14 @@
                 "*.cpp",
                 "*.h",
                 "-o",
-                "${workspaceFolderBasename}"
+                "${workspaceFolderBasename}.out"
             ],
             "problemMatcher": []
         },
         {
             "label": "run",
             "type": "shell",
-            "command": "./${workspaceFolderBasename}",
+            "command": "./${workspaceFolderBasename}.out",
             "dependsOn": [
                 "build"
             ],
