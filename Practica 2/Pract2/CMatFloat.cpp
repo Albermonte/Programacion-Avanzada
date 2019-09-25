@@ -1,7 +1,7 @@
 #include "CMatFloat.h"
 //#include <cstddef>�
-#include <iostream>     // std::cout
-#include <new>          // std::bad_alloc
+#include <iostream> // std::cout
+#include <new>		// std::bad_alloc
 
 using namespace std;
 
@@ -13,31 +13,34 @@ void CMatFloat::Iniciar()
 
 void CMatFloat::CrearMatriz2D(int nFilas, int nColumnas)
 {
-	try {
+	try
+	{
 		m_nFilas = nFilas;
 		m_nColumnas = nColumnas;
-		m_ppDatosF = new float* [nFilas]();
+		m_ppDatosF = new float *[nFilas]();
 		for (int i = 0; i < nFilas; i++)
 			m_ppDatosF[i] = new float[m_nColumnas]();
 	}
-	catch (bad_alloc& ba) {
+	catch (bad_alloc &ba)
+	{
 		cerr << "bad_alloc caught: " << ba.what() << '\n';
 		for (int i = 0; i < nFilas; i++)
 			delete[] m_ppDatosF[i];
 		delete[] m_ppDatosF;
 	}
-
 }
 
 void CMatFloat::CrearMatriz1D(int nElementos)
 {
-	try {
-		m_ppDatosF = new float* [1]();
-		m_ppDatosF[0] = new float [nElementos]();
+	try
+	{
+		m_ppDatosF = new float *[1]();
+		m_ppDatosF[0] = new float[nElementos]();
 		m_nColumnas = nElementos;
 		m_nFilas = 1;
 	}
-	catch (bad_alloc& ba) {
+	catch (bad_alloc &ba)
+	{
 		delete[] m_ppDatosF;
 		cerr << "bad_alloc caught: " << ba.what() << '\n';
 	}
@@ -46,8 +49,10 @@ void CMatFloat::CrearMatriz1D(int nElementos)
 void CMatFloat::Introducir()
 {
 	// TODO: validar con utils
-	for (int i = 0; i < m_nFilas; i++) {
-		for (int j = 0; j < m_nColumnas; j++) {
+	for (int i = 0; i < m_nFilas; i++)
+	{
+		for (int j = 0; j < m_nColumnas; j++)
+		{
 			cout << "Introduce el elemento " << j << " de la fila " << i << ": " << endl;
 			cin >> m_ppDatosF[i][j];
 		}
@@ -57,12 +62,16 @@ void CMatFloat::Introducir()
 void CMatFloat::Mostrar()
 {
 	cout << "Matriz:" << endl;
-	for (int i = 0; i < m_nFilas; i++) {
-		for (int j = 0; j < m_nColumnas; j++) {
+	for (int i = 0; i < m_nFilas; i++)
+	{
+		for (int j = 0; j < m_nColumnas; j++)
+		{
 			cout << m_ppDatosF[i][j] << "  ";
 		}
 		cout << "\n";
 	}
+	cin.get();
+	cin.get();
 }
 
 void CMatFloat::Destruir()
@@ -77,5 +86,3 @@ bool CMatFloat::Existe()
 {
 	return (m_ppDatosF != NULL);
 }
-
-
