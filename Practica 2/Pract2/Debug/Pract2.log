@@ -1,0 +1,6 @@
+﻿  Source.cpp
+  funciones.cpp
+C:\Users\sol.aut.uah.es\Documents\Visual Studio 2019\Projects\Pract2\Pract2\Source.cpp(7,13): warning C4326:  el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
+  Generando código...
+C:\Users\sol.aut.uah.es\Documents\Visual Studio 2019\Projects\Pract2\Pract2\funciones.cpp(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  Pract2.vcxproj -> C:\Users\sol.aut.uah.es\Documents\Visual Studio 2019\Projects\Pract2\Debug\Pract2.exe
