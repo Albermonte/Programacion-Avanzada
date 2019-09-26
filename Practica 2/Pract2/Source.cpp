@@ -23,36 +23,42 @@ int main()
 		clearScreen();
 		switch (opcion)
 		{
-		case 1: // TODO: Comprobar si existe la matriz
+		case 1:
+			if (matriz.Existe())
+			{
+				cout << "Ya existe una matriz, destruyela primero" << endl
+					 << endl;
+				break;
+			}
 			int nElementos;
 			matriz1D(nElementos);
 			matriz.CrearMatriz1D(nElementos);
 			clearScreen();
 			break;
-		case 2: // TODO: Comprobar si existe matriz, si existe crear matriz dinamica de matrices e ir añadiendo matrieces
+		case 2: // TODO: si existe crear matriz dinamica de matrices e ir añadiendo matrieces
+			if (matriz.Existe())
+			{
+				cout << "Ya existe una matriz, destruyela primero" << endl
+					 << endl;
+				break;
+			}
 			int filas, column;
 			matriz2D(filas, column);
 			matriz.CrearMatriz2D(filas, column);
 			clearScreen();
-
 			break;
 		case 3:
-
 			matriz.Introducir();
 			clearScreen();
-
 			break;
 		case 4:
-
 			matriz.Mostrar();
 			clearScreen();
-
 			break;
 		case 5:
 
 			matriz.Destruir();
 			clearScreen();
-
 			break;
 		case 6:
 			cout << "Adios" << endl;
