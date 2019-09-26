@@ -2,6 +2,7 @@
 //#include <cstddef>�
 #include <iostream> // std::cout
 #include <new>		// std::bad_alloc
+#include "utils.h"
 
 using namespace std;
 
@@ -54,7 +55,7 @@ void CMatFloat::Introducir()
 		for (int j = 0; j < m_nColumnas; j++)
 		{
 			cout << "Introduce el elemento " << j << " de la fila " << i << ": " << endl;
-			cin >> m_ppDatosF[i][j];
+			m_ppDatosF[i][j] = LeerInt();
 		}
 	}
 }
@@ -71,15 +72,21 @@ void CMatFloat::Mostrar()
 		cout << "\n";
 	}
 	cin.get();
-	cin.get();
 }
 
 void CMatFloat::Destruir()
 {
+	if(!Existe()){
+		cout << "Nada que destruir"<<endl;
+		cin.get();
+		return;
+	}
 	for (int i = 0; i < m_nFilas; i++)
 		delete[] m_ppDatosF[i];
 	delete[] m_ppDatosF;
 	Iniciar();
+	cout << "Matriz destruida" << endl;
+	cin.get();
 }
 
 bool CMatFloat::Existe()
