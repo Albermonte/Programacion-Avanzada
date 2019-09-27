@@ -31,7 +31,7 @@ public:
 	void Mostrar();       // Vuelca en la pantalla los datos contenidos en la matriz.       
 						  // Mostrar una fila debajo de otra, si procede. 
 
-	void Destruir();       // Libera la memoria ocupada por los datos y llama a Iniciar. 
+	void Destruir(bool wait=true);       // Libera la memoria ocupada por los datos y llama a Iniciar. 
 
 	bool Existe();       // Devuelve true si m_ppDatosF es distinto de NULL       
 						 // (la matriz existe); en otro caso, devuelve false. 

@@ -1,6 +1,7 @@
-﻿  Source.cpp
-  funciones.cpp
-C:\Users\sol.aut.uah.es\Documents\Visual Studio 2019\Projects\Pract2\Pract2\Source.cpp(7,13): warning C4326:  el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
-  Generando código...
-C:\Users\sol.aut.uah.es\Documents\Visual Studio 2019\Projects\Pract2\Pract2\funciones.cpp(2,10): warning C4067:  símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
-  Pract2.vcxproj -> C:\Users\sol.aut.uah.es\Documents\Visual Studio 2019\Projects\Pract2\Debug\Pract2.exe
+﻿  CMatFloat.cpp
+C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 2\Pract2\MemoryManager.h(112,58): warning C5043:  "operator new": la especificación de la excepción no coincide con la declaración anterior.
+E:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\vcruntime_new.h(54): message :  vea la declaración de 'operator new'
+C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 2\Pract2\MemoryManager.h(113,60): warning C5043:  "operator new[]": la especificación de la excepción no coincide con la declaración anterior.
+E:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\vcruntime_new.h(65): message :  vea la declaración de 'operator new[]'
+C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 2\Pract2\CMatFloat.cpp(58,30): warning C4244:  '=': conversión de 'int' a 'float'; posible pérdida de datos
+  Pract2.vcxproj -> C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 2\Debug\Pract2.exe

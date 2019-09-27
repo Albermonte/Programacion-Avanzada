@@ -1,0 +1,287 @@
+------------------------------------------------------------
+Práctica 1, versión 1:
+------------------------------------------------------------
+Menú:
+1. Construir matriz.
+2. Introducir datos matriz.
+3. Mostrar matriz.
+4. Destruir matriz.
+5. Terminar.
+
+#include "MemoryManager.h"
+// otras directrices del preprocesador
+// declaraciones de funciones
+
+Verifique que la función main cumple la siguiente estructura:
+
+int main()
+{
+  {
+    // declaraciones de variables
+
+    // cuerpo de la función main
+  }
+  MemoryManager::dumpMemoryLeaks();
+}
+
+Haga una búsqueda de "malloc" en todos los ficheros fuente de su proyecto
+para verificar que aquellos que llaman a esa función incluyen
+MemoryManager.h. La pregunta de si hay lagunas de memoria se
+hace sólo al finalizar main.
+
+Ejecutar la aplicación. Introducir:
+opción: xxx
+opción: 2
+opción: 3
+opción: 4
+opción: 1
+filas, columnas: xxx
+filas, columnas: 0 -1
+filas, columnas: 2 3
+opción: 1
+opción: 2
+datos: xxx
+datos: 1 2 3 4 5 6
+opción: 3
+opción: 4
+opción: 1
+filas, columnas: 1 4
+*** pregunta: ¿qué pasó con la matriz existente? ***
+opción: 3
+opción: 5
+
+
+------------------------------------------------------------
+Práctica 1, versión 2:
+------------------------------------------------------------
+Menú:
+1. Construir matriz.
+2. Introducir datos matriz.
+3. Mostrar matriz.
+4. Terminar.
+*** pregunta: ¿por qué no hay una opción "Destruir matriz"? ***
+
+Ejecutar la aplicación. Introducir:
+opción: aaa
+opción: 2
+opción: 3
+opción: 4
+Ejecutar la aplicación. Introducir:
+opción: 1
+filas, columnas: aaa 0 -1 2 3
+opción: 3
+opción: 1
+filas, columnas: 3 4
+*** pregunta: ¿qué pasó con el vector existente? ***
+opción: 4
+Ejecutar la aplicación. Introducir:
+opción: 1
+filas, columnas: 3 4
+opción: 2
+datos: aaa 1 2 3 4 5 6 7 8 9 10 11 12
+opción: 2
+opción: 3
+opción: 4
+
+
+------------------------------------------------------------
+Práctica 2, versión 1:
+------------------------------------------------------------
+Verifique que utiliza new/delete, cin/cout,... en lugar de malloc/free, scanf/printf...
+
+¿Ha escrito los ficheros utils.h y utils.cpp
+especificados en el enunciado? Tiene que escribirlos.
+
+Haga una búsqueda de "new" en todos los ficheros fuente de su proyecto
+para verificar que aquellos que utilizan ese operador incluyen
+MemoryManager.h. La pregunta de si hay lagunas de memoria se
+hace sólo al finalizar main, función que debe cumplir la estructura siguiente:
+
+int main()
+{
+  {
+    // declaraciones de variables
+
+    // cuerpo de la función main
+  }
+  MemoryManager::dumpMemoryLeaks();
+}
+
+Ejecutar la aplicación. Introducir:
+aaa
+3
+4
+5
+2
+(filas, columnas) aaa 2 3
+3
+(datos) 11 12 13 14 15 16
+4
+1
+5
+1
+(elementos) 4 
+3
+(datos) 11 12 13 14
+4
+2
+5
+6
+
+Ejecutar la aplicación. Introducir:
+1
+(elementos) 4
+3
+(datos) 11 12 13 14
+4
+6
+
+
+------------------------------------------------------------
+Práctica 2, versión 2:
+------------------------------------------------------------
+Proceda de forma análoga.
+
+
+------------------------------------------------------------
+Práctica 3, versión 1:
+------------------------------------------------------------
+Mismos requesitos respecto de main, operador new y MemoryManager.h que en las
+prácticas anteriores.
+
+Ejecutar la aplicación. Introducir (en las pruebas siguientes el formato de la hora se introduce al final; si en su aplicación se pide al principio, pues introdúzcalo al principio):
+aa
+2
+1
+1 2 3 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+1 2 3 24 horas
+2
+1
+1 72 3 aM
+1 -2 3 aM
+1 2 3 aM
+1
+15 2 30 pm
+5 2 30 pm
+2
+3
+*** pregunta: ¿qué sucede si hace una llamada como la siguiente? ***
+objetoFecha.AsignarHora(Hora, Minutos, Segundos, NULL);
+*** pregunta: ¿en qué ficheros incluyó MemoryManager.h? ***
+
+
+------------------------------------------------------------
+Práctica 3, versión 2:
+------------------------------------------------------------
+Proceda de forma análoga.
+
+
+------------------------------------------------------------
+Práctica 4:
+------------------------------------------------------------
+Mismos requesitos respecto de main, operador new y MemoryManager.h que en las
+prácticas anteriores.
+
+¿Has escrito la clase CUtils del espacio de nombres utils
+especificada en el enunciado? Tienes que escribirla.
+
+Ejecutar la aplicación. Introducir:
+1
+5
+11 13 15 aaaaaaaaaaaaaaaaaa 
+11 13 15 aM
+11 13 15 am
+(Salir al menú principal)
+3
+4
+2
+1 11 12 aaaaaaaaaaaaaaa
+15 11 12 pm
+10 11 12 pm
+2
+18 30 0 24 horas
+3
+4
+5
+
+------------------------------------------------------------
+Práctica 4, versión 2:
+------------------------------------------------------------
+Proceda de forma análoga.
+
+
+------------------------------------------------------------
+Práctica 5:
+------------------------------------------------------------
+Mismos requesitos respecto de main, operador new y MemoryManager.h que en las
+prácticas anteriores.
+
+Ejecutar la aplicación. Introducir:
+hola
+3
+
+1
+Beatriz Campomayor
+20
+10 11 12 aaaaaa
+10 11 12 24 horas
+2
+1
+Beatriz Ruano
+20
+10 11 12 13
+10 11 12 am
+2
+3
+
+------------------------------------------------------------
+Práctica 6:
+------------------------------------------------------------
+Mismos requesitos respecto de main, operador new y MemoryManager.h que en las
+prácticas anteriores.
+
+Ejecutar la aplicación.
+El juego de pruebas se adjunta en el documento de la práctica.
+
+------------------------------------------------------------
+Práctica 7:
+------------------------------------------------------------
+Mismos requesitos respecto de main, operador new y MemoryManager.h que en las
+prácticas anteriores.
+
+Ejecutar la aplicación. Introducir:
+7
+6
+6
+7
+5
+4
+3
+(Introducir el nombre a buscar. Si se encuentra una persona con ese nombre,
+se mostrarán sus datos indicando si es "empleado" o "cliente").
+2
+(Introducir los datos del cliente).
+1
+(Introducir los datos del empleado).
+3
+(Introducir el nombre a buscar).
+4
+5
+6
+1
+(Introducir los datos del empleado).
+4
+5
+6
+7
+4
+8
+
+------------------------------------------------------------
+Práctica 8:
+------------------------------------------------------------
+Mismos requesitos respecto de main, operador new y MemoryManager.h que en las
+prácticas anteriores.
+
+Ejecutar la aplicación.
+El juego de pruebas se adjunta en el documento de la práctica.

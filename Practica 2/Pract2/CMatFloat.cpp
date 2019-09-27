@@ -3,6 +3,7 @@
 #include <iostream> // std::cout
 #include <new>		// std::bad_alloc
 #include "utils.h"
+#include "MemoryManager.h"
 
 using namespace std;
 
@@ -49,7 +50,6 @@ void CMatFloat::CrearMatriz1D(int nElementos)
 
 void CMatFloat::Introducir()
 {
-	// TODO: validar con utils
 	for (int i = 0; i < m_nFilas; i++)
 	{
 		for (int j = 0; j < m_nColumnas; j++)
@@ -74,19 +74,23 @@ void CMatFloat::Mostrar()
 	cin.get();
 }
 
-void CMatFloat::Destruir()
+void CMatFloat::Destruir(bool wait)
 {
 	if(!Existe()){
-		cout << "Nada que destruir"<<endl;
-		cin.get();
+		if (wait) {
+			cout << "Nada que destruir" << endl;
+			cin.get();
+		}
 		return;
 	}
 	for (int i = 0; i < m_nFilas; i++)
 		delete[] m_ppDatosF[i];
 	delete[] m_ppDatosF;
 	Iniciar();
-	cout << "Matriz destruida" << endl;
-	cin.get();
+	if (wait) {
+		cout << "Matriz destruida" << endl;
+		cin.get();
+	}
 }
 
 bool CMatFloat::Existe()
