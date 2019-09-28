@@ -5,8 +5,8 @@
 
 using namespace std;
 
-void matriz1D(int&);
-void matriz2D(int&, int&);
+int matriz1D();
+void matriz2D(int &, int &);
 bool checkExiste(bool);
 
 int main()
@@ -23,14 +23,14 @@ int main()
 		switch (opcion)
 		{
 		case 1:
-			if (checkExiste(matriz.Existe())) break;
-			int nElementos;
-			matriz1D(nElementos);
-			matriz.CrearMatriz1D(nElementos);
+			if (checkExiste(matriz.Existe()))
+				break;
+			matriz.CrearMatriz1D(matriz1D());
 			clearScreen();
 			break;
 		case 2: // TODO: si existe crear matriz dinamica de matrices e ir añadiendo matrieces
-			if (checkExiste(matriz.Existe())) break;
+			if (checkExiste(matriz.Existe()))
+				break;
 			int filas, column;
 			matriz2D(filas, column);
 			matriz.CrearMatriz2D(filas, column);
@@ -60,23 +60,44 @@ int main()
 			break;
 		}
 	} while (opcion != 6);
-	
+
 	MemoryManager::dumpMemoryLeaks();
 	return 0;
 }
 
-void matriz1D(int& nElementos)
+int matriz1D()
 {
+	int nElementos = 0;
 	clearScreen();
-	cout << "Numero de elementos:" << endl;
-	nElementos = LeerInt();
+	while (nElementos <= 0)
+	{
+		cout << "Numero de elementos:" << endl;
+		// TODO: validar con utils (flags, limpiar buffer)
+		// TODO: usar menu para seleccionar opcion
+		nElementos = LeerInt();
+		if (nElementos <= 0)
+			cout << "Introduce un numero mayor que 0" << endl;
+	}
+	return nElementos;
 }
-void matriz2D(int& filas, int& columnas)
+
+void matriz2D(int &filas, int &columnas)
 {
-	clearScreen();
-	cout << "Numero de filas y columnas:" << endl;
-	filas = LeerInt();
-	columnas = LeerInt();
+	bool error = false;
+	do
+	{
+		clearScreen();
+		if (error)
+		{
+			cout << "Introduce un numero mayor que 0" << endl;
+			error = false;
+		}
+		cout << "Numero de filas y columnas:" << endl;
+		filas = LeerInt();
+		columnas = LeerInt();
+		if (filas <= 0 || columnas <= 0)
+			error = true;
+	} while (error);
 }
 
 bool checkExiste(bool existe)
@@ -84,9 +105,10 @@ bool checkExiste(bool existe)
 	if (existe)
 	{
 		cout << "Ya existe una matriz, destruyela primero" << endl
-			<< endl;
+			 << endl;
 		return true;
-	}else
+	}
+	else
 	{
 		return false;
 	}
