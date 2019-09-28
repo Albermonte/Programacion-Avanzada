@@ -1,5 +1,4 @@
-﻿#include "MemoryManager.h"
-#include <iostream>
+﻿#include <iostream>
 struct MatFloat
 {
 	int nFilas; // Número de filas

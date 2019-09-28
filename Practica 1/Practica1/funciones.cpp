@@ -2,42 +2,56 @@
 #include "funciones.h"
 using namespace std;
 
-float** ConstruirMatriz(int nFilas, int nColumnas)
+float **ConstruirMatriz(int nFilas, int nColumnas)
 {
-	float** array = NULL;
-	int i;
-	try
-	{
-		array = new float* [nFilas]; // "()" inicializa el array a 0
-		for (i = 0; i < nFilas; i++)
-			array[i] = new  float[nColumnas](); // "()" inicializa el array a 0
+	float **array = (float **)malloc(nFilas * sizeof(float *));
+	for (int i = 0; i < nFilas; i++)
+		array[i] = (float *)malloc(nColumnas * sizeof(float));
 
-		// TODO: Verificar asignacion
+	for (int i = 0; i < nFilas; i++)
+		for (int j = 0; j < nColumnas; j++)
+			array[i][j] = 0;
 
-		// TODO: Inicializar matriz a 0
-	}
-	catch (bad_alloc e)
-	{
-		cout << "Error de asignacion de memoria" << endl;
-		for (int j = 0; j < i; j++)
-			delete[] array[j];
-		delete[] array;
-		return NULL;
-	}
+	// TODO: Verificar asignacion
+
+	// TODO: Inicializar matriz a 0
+
+	// 	cout << "Error de asignacion de memoria" << endl;
+	// 	for (int j = 0; j < i; j++)
+	// 		delete[] array[j];
+	// 	delete[] array;
+	// 	return NULL;
 	return array;
 }
 
-void IntroducirDatos(MatFloat* pDestino)
+void IntroducirDatos(MatFloat *pDestino)
 {
 	/*
 	* struct MatFloat
 	* {
-	* 	int nFilas; // Número de filas
-	* 	int nColumnas; // Número de columnas
+	* 	int nFilas; // Nï¿½mero de filas
+	* 	int nColumnas; // Nï¿½mero de columnas
 	* 	float** ppMatrizF; // Datos de la matriz
 	* };
 	*/
-	
+	if (pDestino->ppMatrizF == NULL)
+	{
+		if (system("CLS"))
+			system("clear");
+		printf("No existe ninguna matriz aun\n");
+	}
+	else
+	{
+		for (int i = 0; i < pDestino->nFilas; i++)
+		{
+			for (int j = 0; j < pDestino->nColumnas; j++)
+			{
+				printf("Introduce el elemento %d de la fila %d: \n", i, j);
+				scanf("%f", &pDestino->ppMatrizF[i][j]);
+			}
+		}
+	}
+
 	// TODO: Comprobar si existe matriz
 
 	// TODO: Pedir datos por pantalla
@@ -45,8 +59,6 @@ void IntroducirDatos(MatFloat* pDestino)
 	// TODO: Introducir datos en amtriz
 
 	// TODO: Validar datos, mismo tipo al pedido
-
-
 }
 
 void Mostrar(MatFloat mOrigen)
@@ -59,10 +71,16 @@ void Mostrar(MatFloat mOrigen)
 	 * 0 0 0
 	 * 
 	 */
+	printf("Matriz: \n");
+	for (int i = 0; i < mOrigen.nFilas; i++)
+	{
+		for (int j = 0; j < mOrigen.nColumnas; j++)
+			printf("%f ", mOrigen.ppMatrizF[i][j]);
+		printf("\n");
+	}
+	getchar();
+	getchar();
 	
-	// mOrigen.ppMatrizF[0][0];
-
-	// TODO: Mostras por filas
 }
 
 /*
