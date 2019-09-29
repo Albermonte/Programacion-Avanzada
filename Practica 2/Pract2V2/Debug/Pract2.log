@@ -1,0 +1,7 @@
+﻿  CMatFloat.cpp
+C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 2\Pract2\MemoryManager.h(112,58): warning C5043:  "operator new": la especificación de la excepción no coincide con la declaración anterior.
+E:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\vcruntime_new.h(54): message :  vea la declaración de 'operator new'
+C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 2\Pract2\MemoryManager.h(113,60): warning C5043:  "operator new[]": la especificación de la excepción no coincide con la declaración anterior.
+E:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\vcruntime_new.h(65): message :  vea la declaración de 'operator new[]'
+C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 2\Pract2\CMatFloat.cpp(61,31): warning C4244:  '=': conversión de 'int' a 'float'; posible pérdida de datos
+  Pract2.vcxproj -> C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 2\Debug\Pract2.exe

@@ -91,6 +91,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <AdditionalOptions>MemoryManager-vc2019-d.obj %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -124,14 +125,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CMatFloat.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="utils.cpp" />
+    <ClInclude Include="..\Pract2V2\CMatFloat.h" />
+    <ClInclude Include="..\Pract2V2\MemoryManager.h" />
+    <ClInclude Include="..\Pract2V2\utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CMatFloat.h" />
-    <ClInclude Include="MemoryManager.h" />
-    <ClInclude Include="utils.h" />
+    <ClCompile Include="..\Pract2V2\CMatFloat.cpp" />
+    <ClCompile Include="..\Pract2V2\Source.cpp" />
+    <ClCompile Include="..\Pract2V2\utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
