@@ -1,5 +1,7 @@
 #include <iostream>
 #include "funciones.h"
+//#include "MemoryManager.h"
+
 using namespace std;
 
 float **ConstruirMatriz(int nFilas, int nColumnas)
@@ -12,15 +14,9 @@ float **ConstruirMatriz(int nFilas, int nColumnas)
 		for (int j = 0; j < nColumnas; j++)
 			array[i][j] = 0;
 
-	// TODO: Verificar asignacion
-
-	// TODO: Inicializar matriz a 0
-
-	// 	cout << "Error de asignacion de memoria" << endl;
-	// 	for (int j = 0; j < i; j++)
-	// 		delete[] array[j];
-	// 	delete[] array;
-	// 	return NULL;
+	if(array == NULL){
+		printf("Problema de reserva de memoria");
+	}
 	return array;
 }
 
@@ -39,6 +35,8 @@ void IntroducirDatos(MatFloat *pDestino)
 		if (system("CLS"))
 			system("clear");
 		printf("No existe ninguna matriz aun\n");
+		getchar();
+		getchar();
 	}
 	else
 	{
@@ -47,18 +45,19 @@ void IntroducirDatos(MatFloat *pDestino)
 			for (int j = 0; j < pDestino->nColumnas; j++)
 			{
 				printf("Introduce el elemento %d de la fila %d: \n", i, j);
-				scanf("%f", &pDestino->ppMatrizF[i][j]);
+				bool error = false;
+				do
+				{
+					error = false;
+					if(scanf("%f", &pDestino->ppMatrizF[i][j]) != 1){
+						error = true;
+						printf("Introduce un numero: \n");
+						getchar();
+					}
+				}while (error);
 			}
 		}
 	}
-
-	// TODO: Comprobar si existe matriz
-
-	// TODO: Pedir datos por pantalla
-
-	// TODO: Introducir datos en amtriz
-
-	// TODO: Validar datos, mismo tipo al pedido
 }
 
 void Mostrar(MatFloat mOrigen)
@@ -71,6 +70,13 @@ void Mostrar(MatFloat mOrigen)
 	 * 0 0 0
 	 * 
 	 */
+	if (mOrigen.ppMatrizF == NULL)
+	{
+		printf("Ninguna matriz que mostrar\n");
+		getchar();
+		getchar();
+		return;
+	}
 	printf("Matriz: \n");
 	for (int i = 0; i < mOrigen.nFilas; i++)
 	{
@@ -80,16 +86,25 @@ void Mostrar(MatFloat mOrigen)
 	}
 	getchar();
 	getchar();
-	
 }
 
-/*
-void Destruir(MatFloat* pMatFloat) {
-	for (int i = 0; i < 10; i++)
+void Destruir(MatFloat *pMatFloat)
+{
+	if (pMatFloat->ppMatrizF == NULL)
 	{
-		delete[] a[i]; // Delete columns
+		printf("Nada que destruir\n");
+		getchar();
+		getchar();
+		return;
 	}
-	delete[] a; // Delete Rows
-	return 0;
+	for (int i = 0; i < pMatFloat->nFilas; i++)
+	{
+		free(pMatFloat->ppMatrizF[i]);
+	}
+	free(pMatFloat->ppMatrizF);
+	pMatFloat->ppMatrizF = NULL;
+	pMatFloat->nFilas = pMatFloat->nColumnas = 0;
+	printf("Matriz destruida\n");
+	getchar();
+	getchar();
 }
-*/

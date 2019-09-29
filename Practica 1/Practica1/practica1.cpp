@@ -1,4 +1,6 @@
 #include "funciones.h"
+//#include "MemoryManager.h"
+
 using namespace std;
 
 void menu();
@@ -14,11 +16,20 @@ int main()
 	do
 	{
 		menu();
-		scanf("%d", &opcion);
+		if (scanf("%d", &opcion) != 1)
+		{
+			opcion = 0;
+			getchar();
+		}
 		switch (opcion)
 		{
 		case 1:
 			clearScreen();
+			if (matriz.ppMatrizF != NULL)
+			{
+				printf("Ya existe una matriz, destruyela antes\n");
+				break;
+			}
 			printf("1. Construir matriz \n\n");
 			printf("Introduce las dimensiones de la matriz:\n");
 			int filas, columnas;
@@ -46,11 +57,13 @@ int main()
 		case 4:
 			clearScreen();
 			printf("4. Destruir matriz \n\n");
+			Destruir(&matriz);
 			clearScreen();
 			break;
 		case 5:
 			clearScreen();
 			printf("5. Terminar \n\n");
+			Destruir(&matriz);
 			break;
 		default:
 			clearScreen();
@@ -58,6 +71,8 @@ int main()
 			break;
 		}
 	} while (opcion != 5);
+
+	//MemoryManager::dumpMemoryLeaks();
 	return 0;
 }
 
@@ -80,10 +95,17 @@ void clearScreen()
 
 void LeerTeclado(int *filas, int *columnas)
 {
+	bool error = false;
 	do
 	{
-		scanf("%d %d", filas, columnas);
+		error = false;
+		if (scanf("%d", filas) != 1 || scanf("%d", columnas) != 1)
+		{
+			printf("Introduce un numero:\n");
+			getchar();
+			error = true;
+		}
 		if (*filas < 0 || *columnas < 0)
 			printf("Introduce un numero mayor que 0:\n");
-	} while (*filas < 0 || *columnas < 0);
+	} while (*filas < 0 || *columnas < 0 || error);
 }
