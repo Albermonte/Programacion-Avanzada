@@ -16,6 +16,8 @@ float **ConstruirMatriz(int nFilas, int nColumnas)
 
 	if(array == NULL){
 		printf("Problema de reserva de memoria");
+		getchar();
+		getchar();
 	}
 	return array;
 }
