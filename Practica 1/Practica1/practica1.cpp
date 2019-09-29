@@ -1,5 +1,5 @@
 #include "funciones.h"
-//#include "MemoryManager.h"
+#include "MemoryManager.h"
 
 using namespace std;
 
@@ -71,8 +71,8 @@ int main()
 			break;
 		}
 	} while (opcion != 5);
-
-	//MemoryManager::dumpMemoryLeaks();
+	
+	MemoryManager::dumpMemoryLeaks();
 	return 0;
 }
 

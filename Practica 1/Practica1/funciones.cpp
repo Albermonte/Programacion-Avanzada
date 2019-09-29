@@ -1,6 +1,6 @@
 #include <iostream>
 #include "funciones.h"
-//#include "MemoryManager.h"
+#include "MemoryManager.h"
 
 using namespace std;
 
