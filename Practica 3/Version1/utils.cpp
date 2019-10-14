@@ -76,4 +76,5 @@ string& ConverMayus(string& str){
 
 void LeerCadena(char *c, int n){
     cin.getline(c, n, '\n');
+	c = ConverMayus(c);
 }
