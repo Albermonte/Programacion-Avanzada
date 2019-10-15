@@ -2,6 +2,7 @@
 #include "utils.h"
 #include <iostream>
 #include <iterator>
+#include "MemoryManager.h"
 
 using namespace std;
 bool introducirHora(CHora &);
@@ -25,11 +26,15 @@ int main() {
 			clearScreen();
 			break;
 		case 2:
-			//hora.ObtenerHora();
+			int horas, minutos, segundos;
+			char pszFormato[10];
+			hora.ObtenerHora(horas, minutos, segundos, pszFormato);
+			cout << "Hora: " << horas << ":" << minutos << ":" << segundos << " " << pszFormato << endl;
+			cin.get();
 			clearScreen();
 			break;
 		case 3:
-
+			cout << "Adios" << endl;
 			clearScreen();
 			break;
 		default:
@@ -38,11 +43,7 @@ int main() {
 			break;
 		}
 	} while (opcion != num_opciones);
-	char str[] = "24 horas";
-	// string str2 = "Hola";
-	// LeerCadena(str, 5);
-	//cout << ConverMayus(str) << endl;
-	// cout << ConverMayus(str2) << endl;
+	MemoryManager::dumpMemoryLeaks();
 	return 0;
 }
 

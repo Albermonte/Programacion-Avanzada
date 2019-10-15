@@ -40,4 +40,6 @@ public:
   void Destruir();
   // Libera la memoria reservada dinámicamente para un objeto y
   // pone el puntero m_pszFormato a cero.
+  CHora() { Iniciar(); }
+  ~CHora() { if(m_pszFormato != nullptr) Destruir(); }
 };
