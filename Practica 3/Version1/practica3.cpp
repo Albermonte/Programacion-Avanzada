@@ -29,6 +29,9 @@ int main() {
 			int horas, minutos, segundos;
 			char pszFormato[10];
 			hora.ObtenerHora(horas, minutos, segundos, pszFormato);
+			if (!horas && !minutos && !segundos && strcmp(pszFormato, "0") == 0 ) {
+				cout << "No hay ninguna hora introducida" << endl;
+			}
 			cout << "Hora: " << horas << ":" << minutos << ":" << segundos << " " << pszFormato << endl;
 			cin.get();
 			clearScreen();
