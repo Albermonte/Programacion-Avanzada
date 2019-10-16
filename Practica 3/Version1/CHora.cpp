@@ -42,7 +42,7 @@ bool CHora::Formato24() const
 
 bool CHora::EsHoraCorrecta() const
 {
-	bool check = ((Formato24() ? m_nHoras < 24 : m_nHoras < 12) && m_nHoras >= 0 && m_nMinutos < 60 && m_nMinutos >= 0 && m_nSegundos < 60 && m_nSegundos >= 0);
+	bool check = ((Formato24() ? m_nHoras <= 24 : m_nHoras <= 12) && m_nHoras >= 0 && m_nMinutos < 60 && m_nMinutos >= 0 && m_nSegundos < 60 && m_nSegundos >= 0);
 	bool formatoCorrecto = Formato24() || strcmp(m_pszFormato, "AM") == 0 || strcmp(m_pszFormato, "PM") == 0;
 	if(!formatoCorrecto) std::cout << "Formato incorrecto"<< std::endl;
 	return check && formatoCorrecto;
