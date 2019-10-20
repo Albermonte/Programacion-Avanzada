@@ -1,0 +1,10 @@
+﻿  practica4.cpp
+C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 4\Version1\MemoryManager.h(112,58): warning C5043:  "operator new": la especificación de la excepción no coincide con la declaración anterior.
+E:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\vcruntime_new.h(54): message :  vea la declaración de 'operator new'
+C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 4\Version1\MemoryManager.h(113,60): warning C5043:  "operator new[]": la especificación de la excepción no coincide con la declaración anterior.
+E:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\vcruntime_new.h(65): message :  vea la declaración de 'operator new[]'
+  utils.cpp
+C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 4\Version1\practica4.cpp(194,10): warning C4101:  'c': variable local sin referencia
+  Generando código...
+C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 4\Version1\utils.cpp(96,20): warning C4018:  '<': no coinciden signed/unsigned
+  Practica4V1.vcxproj -> C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 4\Version1\Debug\Practica4V1.exe
