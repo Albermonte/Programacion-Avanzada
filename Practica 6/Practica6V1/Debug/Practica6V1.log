@@ -1,6 +1,2 @@
-﻿  CMonomio.cpp
-  CPolinomio.cpp
-  main.cpp
-  Generando código...
-main.obj : error LNK2019: símbolo externo "class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl operator<<(class std::basic_ostream<char,struct std::char_traits<char> > &,class CPolinomio const &)" (??6@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@std@@AAV01@ABVCPolinomio@@@Z) sin resolver al que se hace referencia en la función _main
-C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 6\Practica6V1\Debug\Practica6V1.exe : fatal error LNK1120: 1 externos sin resolver
+﻿  CPolinomio.cpp
+  Practica6V1.vcxproj -> C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 6\Practica6V1\Debug\Practica6V1.exe

@@ -5,10 +5,12 @@
 class CPolinomio
 {
 private:
-	CTermino* m_pCabecera;	// Primer t�rmino (el de mayor grado)
-	vector<CMonomio> m_Monomios;
+	CTermino* m_pCabecera;	// Primer termino (el de mayor grado)
+	//vector<CTermino> m_Terminos;
 
 public:
+	void setCabecera(CTermino* pCabecera) { m_pCabecera = pCabecera; }
+	CTermino* getCabecera() { return m_pCabecera; }
 	// Constructor con cabecera como parametro
 
 	//CPolinomio (CTermino* cabecera) : m_pCabecera(cabecera) {}

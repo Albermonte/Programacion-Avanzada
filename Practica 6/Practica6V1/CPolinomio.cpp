@@ -1,8 +1,8 @@
 #include "CPolinomio.h"
 
-void CPolinomio::MostrarPoli(ostream &os) const
+void CPolinomio::MostrarPoli(ostream& os) const
 {
-	const CTermino *pPos = m_pCabecera;
+	const CTermino* pPos = m_pCabecera;
 
 	if (pPos)
 		do
@@ -14,7 +14,7 @@ void CPolinomio::MostrarPoli(ostream &os) const
 		os << "0 ";
 }
 
-CPolinomio &CPolinomio::operator<<(const CMonomio &mono)
+CPolinomio& CPolinomio::operator<<(const CMonomio& mono)
 {
 	if (!mono.GetCoef()) // Monomio con coeficiente 0
 	{
@@ -22,55 +22,89 @@ CPolinomio &CPolinomio::operator<<(const CMonomio &mono)
 	}
 	if (m_pCabecera == nullptr) // Lista vacia
 	{
-		CTermino Termino(mono);
-		m_Monomios.push_back(mono);
-		m_pCabecera = &Termino;
+		CTermino* termino = new CTermino(mono);
+		m_pCabecera = termino;
 		return *this;
 	}
-	CTermino *pPos = m_pCabecera;
+
+	CTermino* pPos = m_pCabecera, * anterior = nullptr;
 	bool existe = false;
 	do
 	{
-		if (mono.GetExp() == pPos->GetExp()) // Existe elemento con mismo exponente
+		if (mono.GetExp() == pPos->GetMono().GetExp()) // Existe elemento con mismo exponente
 		{
 			existe = true;
-			if (pPos->GetCoef() + mono.GetCoef() == 0)
+			if (pPos->GetMono().GetCoef() + mono.GetCoef() == 0)
 			{
-				/* TODO: free elemento eliminado */
-				pPos->SetSig((pPos->GetSig())->GetSig());
+				if (anterior == nullptr)
+				{
+					m_pCabecera = pPos->GetSig();
+					delete pPos;
+				}
+				else
+				{
+					anterior->SetSig(anterior->GetSig() == nullptr ? nullptr : anterior->GetSig()->GetSig());
+					delete pPos;
+				}
 			}
 			else
 			{
+				pPos->SetMono(mono);
 				pPos->SetCoef(pPos->GetCoef() + mono.GetCoef());
-				m_Monomios.push_back(mono);
 			}
 
 			return *this;
 		}
+		anterior = pPos;
 		pPos = pPos->GetSig();
 	} while (pPos);
+	anterior = nullptr;
 	if (!existe)
 	{
 		pPos = m_pCabecera; // No existe elemento con mismo exponente
 		do
 		{
-			if (pPos->GetExp() > mono.GetExp() && (pPos->GetSig())->GetExp() < mono.GetExp())
+			if (pPos->GetSig() == nullptr) // Último de la lista
 			{
-				CTermino Termino(mono, (pPos->GetSig())->GetSig());
-				pPos->SetMono(pPos->GetMono());
-				pPos->SetSig(&Termino);
-				pPos = nullptr;
-				m_Monomios.push_back(mono);
+				if (pPos->GetExp() < mono.GetExp())
+				{
+					CTermino* termino = new CTermino(mono, pPos);
+					if (anterior != nullptr)
+						anterior->SetSig(termino);
+					else
+						m_pCabecera = termino;
+				}
+				else
+				{
+					CTermino* termino = new CTermino(mono);
+					pPos->SetSig(termino);
+				}
 				return *this;
 			}
-			if (pPos->GetSig() == nullptr)
+			if (pPos->GetExp() < mono.GetExp()) // Insertar en su posición
 			{
-				CTermino Termino(mono);
-				pPos->SetSig(&Termino);
-				m_Monomios.push_back(mono);
+				CTermino* termino = new CTermino(mono, pPos);
+				if (anterior != nullptr)
+					pPos->SetSig(termino);
+				else
+					m_pCabecera = termino;
+
+				//pPos->SetMono(pPos->GetMono());
+				/*Terminos.push_back(Termino);
+				m_pCabecera = &m_Terminos[0];*/
 				return *this;
 			}
+			anterior = pPos;
+			pPos = pPos->GetSig();
 		} while (pPos);
 	}
 	return *this;
 }
+
+
+ostream& operator<<(ostream& os, const CPolinomio& Poli)
+{
+	Poli.MostrarPoli(os);
+	return os;
+}
+
