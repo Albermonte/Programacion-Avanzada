@@ -101,6 +101,32 @@ CPolinomio& CPolinomio::operator<<(const CMonomio& mono)
 	return *this;
 }
 
+bool CPolinomio::operator==(const CPolinomio pol)
+{
+	if (m_pCabecera == nullptr) return false;
+	const CTermino* pPos = m_pCabecera;
+	bool igual = false;
+	do
+	{
+		if (pol.m_pCabecera->GetExp() == pPos->GetExp() && pol.m_pCabecera->GetCoef() == pPos->GetCoef()) igual = true;
+		pPos = pPos->GetSig();
+	} while (pPos);
+	return igual;
+}
+
+bool CPolinomio::operator>(const CPolinomio polinomio)
+{
+	return m_pCabecera->GetExp() > polinomio.m_pCabecera->GetExp();
+}
+
+
+int CPolinomio::MayorGrado()
+{
+	return m_pCabecera->GetExp();
+}
+
+
+
 
 ostream& operator<<(ostream& os, const CPolinomio& Poli)
 {

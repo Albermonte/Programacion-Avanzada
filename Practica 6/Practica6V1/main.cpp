@@ -29,7 +29,27 @@ int main()
 		<< "X = " << X << endl
 		<< "Y = " << Y << endl
 		<< "Z = " << Z << endl
-		<< "N = " << N << endl;
+		<< "N = " << N << endl << endl << endl;
+
+	CPolinomio A(P), B;
+	CPolinomio C(2.5, 1), D(2.5, 5);
+	CPolinomio E(m4);
+	B = Q;
+	P = P;
+	vector<CMonomio> monomios;
+	monomios.push_back(m4);
+	monomios.push_back(m3);
+	monomios.push_back(m2);
+	CPolinomio F(monomios);
+
+	cout << "CPolinomio A = P (constructor copia)\nA = " << A << endl
+		<< "B = Q (operador de asignacion)\n B = " << B << endl
+		<< "P = P (evitar auto-asignacion)\n P: " << P << endl
+		<< "Probando el constructor con un coef. y un exp. " << endl << C << endl << D << endl
+		<< "Probando el constructor con un monomio\n E = " << E << endl
+		<< "Obteniendo el grado del polinomio.\n El grado de U es: " << U.MayorGrado() << endl
+		<< "Probando el constructor con vector<CMonomio>\n F = " << F << endl
+		<< "Probando el operador >\n P = -4x^4 +3x^3 +2x^2\n U = +3x^3 +2x^2" << endl << "P " << (P > U ? "es de mayor grado que" : "es de menor grado que") << " U" << endl;
 
 
 	return 0;
