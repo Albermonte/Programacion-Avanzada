@@ -109,6 +109,9 @@ public:
 
 	bool operator==(const CPolinomio polinomio);
 	bool operator>(const CPolinomio polinomio);
+	CPolinomio operator-();
+	CPolinomio operator+(const CPolinomio polinomio);
+	CPolinomio operator-(const CPolinomio polinomio);
 
 	int MayorGrado();
 

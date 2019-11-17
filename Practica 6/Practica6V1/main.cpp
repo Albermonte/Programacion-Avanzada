@@ -49,8 +49,15 @@ int main()
 		<< "Probando el constructor con un monomio\n E = " << E << endl
 		<< "Obteniendo el grado del polinomio.\n El grado de U es: " << U.MayorGrado() << endl
 		<< "Probando el constructor con vector<CMonomio>\n F = " << F << endl
-		<< "Probando el operador >\n P = -4x^4 +3x^3 +2x^2\n U = +3x^3 +2x^2" << endl << "P " << (P > U ? "es de mayor grado que" : "es de menor grado que") << " U" << endl;
+		<< "Probando el operador >\n P = -4x^4 +3x^3 +2x^2\n U = +3x^3 +2x^2" << endl
+		<< "P " << (P > U ? "es de mayor grado que" : "es de menor grado que") << " U" << endl
+		<< "Probando el operador ==\n P = -4x^4 +3x^3 +2x^2\n Q = +4x^4 - 3x^3 + 2x^2" << endl
+		<< "P " << (P == Q ? "es de mismo grado que" : "es de distinto grado que") << " Q" << endl
+		<< "Probando el operador - unario\n Q = +4x^4 - 3x^3 + 2x^2\n -Q = " << -Q << endl
+		<< "Probando el operador +\n N = +8x^4 +3x^3 +2x^2\n U = +3x^3 +2x^2\n N + U: " << N + U << endl
+		<< "Probando los operadores - y +=\n R = +4x^4 +3x^3 -2x^2\n S = +4x^4 + 3x^3\n R - S: -2x^2\n R += S : +8x^4 + 6x^3 - 2x^2\n" << R - S << endl;
 
 
-	return 0;
+
+		return 0;
 }

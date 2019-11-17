@@ -104,20 +104,134 @@ CPolinomio& CPolinomio::operator<<(const CMonomio& mono)
 bool CPolinomio::operator==(const CPolinomio pol)
 {
 	if (m_pCabecera == nullptr) return false;
-	const CTermino* pPos = m_pCabecera;
-	bool igual = false;
-	do
-	{
-		if (pol.m_pCabecera->GetExp() == pPos->GetExp() && pol.m_pCabecera->GetCoef() == pPos->GetCoef()) igual = true;
-		pPos = pPos->GetSig();
-	} while (pPos);
-	return igual;
+	return m_pCabecera->GetExp() == pol.m_pCabecera->GetExp();
 }
 
 bool CPolinomio::operator>(const CPolinomio polinomio)
 {
 	return m_pCabecera->GetExp() > polinomio.m_pCabecera->GetExp();
 }
+
+CPolinomio CPolinomio::operator-()
+{
+	CTermino* pPos = m_pCabecera;
+
+	do
+	{
+		CMonomio monomio = pPos->GetMono();
+		monomio.SetCoef(-pPos->GetCoef());
+		pPos->SetMono(monomio);
+		pPos = pPos->GetSig();
+	} while (pPos);
+	return *this;
+}
+
+CPolinomio CPolinomio::operator+(const CPolinomio polinomio)
+{
+	CTermino* pPos = m_pCabecera;
+	CTermino* pPos2 = polinomio.m_pCabecera;
+	vector<CMonomio> monomios;
+
+	do
+	{
+		do
+		{
+			bool saltar = false;
+			if (pPos->GetExp() == pPos2->GetExp())
+			{
+				CMonomio monomio(pPos->GetCoef() + pPos2->GetCoef(), pPos->GetExp());
+				monomios.push_back(monomio);
+			}
+			else if (pPos->GetExp() > pPos2->GetExp())
+			{
+				for (int i = 0; i < monomios.size(); i++)
+				{
+					if (pPos->GetExp() == monomios[i].GetExp())
+					{
+						saltar = true;
+					}
+				}
+				if (!saltar)
+				{
+					CMonomio monomio(pPos->GetCoef(), pPos->GetExp());
+					monomios.push_back(monomio);
+				}
+			}
+
+			pPos2 = pPos2->GetSig();
+		} while (pPos2);
+		pPos2 = m_pCabecera;
+		pPos = pPos->GetSig();
+	} while (pPos);
+	CPolinomio polinomio2(monomios);
+	return  polinomio2;
+}
+
+
+CPolinomio CPolinomio::operator-(const CPolinomio polinomio)
+{
+	CTermino* pPos = m_pCabecera;
+	CTermino* pPos2 = polinomio.m_pCabecera;
+	vector<CMonomio> monomios;
+
+	do
+	{
+		do
+		{
+			bool saltar = false;
+			if (pPos->GetExp() == pPos2->GetExp())
+			{
+				CMonomio monomio(pPos->GetCoef() - pPos2->GetCoef(), pPos->GetExp());
+				monomios.push_back(monomio);
+			}
+			else if (pPos->GetExp() > pPos2->GetExp())
+			{
+				saltar = false;
+				for (int i = 0; i < monomios.size(); i++)
+				{
+					if (pPos->GetExp() == monomios[i].GetExp())
+					{
+						saltar = true;
+					}
+				}
+				if (!saltar)
+				{
+					CMonomio monomio(pPos->GetCoef(), pPos->GetExp());
+					monomios.push_back(monomio);
+				}
+			}
+			else
+			{
+				saltar = false;
+				for (int i = 0; i < monomios.size(); i++)
+				{
+					if (pPos->GetExp() == monomios[i].GetExp())
+					{
+						saltar = true;
+					}
+				}
+				if (!saltar)
+				{
+					CMonomio monomio(pPos->GetCoef(), pPos->GetExp());
+					monomios.push_back(monomio);
+				}
+			}
+
+			pPos2 = pPos2->GetSig();
+		} while (pPos2);
+		pPos2 = m_pCabecera;
+		pPos = pPos->GetSig();
+	} while (pPos);
+	for(int i = 0; i< monomios.size();i++)
+	{
+		if (monomios[i].GetCoef() == 0)
+			monomios.erase(monomios.begin() + i);
+	}
+	CPolinomio polinomio2(monomios);
+	return  polinomio2;
+}
+
+
 
 
 int CPolinomio::MayorGrado()
