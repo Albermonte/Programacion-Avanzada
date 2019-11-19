@@ -1,4 +1,5 @@
 #include "CPolinomio.h"
+#include "MemoryManager.h"
 
 void CPolinomio::MostrarPoli(ostream& os) const
 {
@@ -27,7 +28,7 @@ CPolinomio& CPolinomio::operator<<(const CMonomio& mono)
 		return *this;
 	}
 
-	CTermino* pPos = m_pCabecera, * anterior = nullptr;
+	CTermino* pPos = m_pCabecera, *anterior = nullptr;
 	bool existe = false;
 	do
 	{
@@ -132,37 +133,33 @@ CPolinomio CPolinomio::operator+(const CPolinomio polinomio)
 	CTermino* pPos2 = polinomio.m_pCabecera;
 	vector<CMonomio> monomios;
 
-	do
-	{
-		do
-		{
-			bool saltar = false;
-			if (pPos->GetExp() == pPos2->GetExp())
-			{
-				CMonomio monomio(pPos->GetCoef() + pPos2->GetCoef(), pPos->GetExp());
-				monomios.push_back(monomio);
+	for (int i = 0; i <= (polinomio.MayorGrado() > this->MayorGrado() ? polinomio.MayorGrado() : this->MayorGrado()); i++) {
+		pPos = m_pCabecera;
+		pPos2 = polinomio.m_pCabecera;
+		CMonomio monomio1(0, 0);
+		CMonomio monomio2(0, 0);
+		do {
+			if (pPos->GetExp() == i) {
+				monomio1.SetCoef(pPos->GetCoef());
+				monomio1.SetExp(pPos->GetExp());
 			}
-			else if (pPos->GetExp() > pPos2->GetExp())
-			{
-				for (int i = 0; i < monomios.size(); i++)
-				{
-					if (pPos->GetExp() == monomios[i].GetExp())
-					{
-						saltar = true;
-					}
-				}
-				if (!saltar)
-				{
-					CMonomio monomio(pPos->GetCoef(), pPos->GetExp());
-					monomios.push_back(monomio);
-				}
+			pPos = pPos->GetSig();
+		} while (pPos);
+		do {
+			if (pPos2->GetExp() == i) {
+				monomio2.SetCoef(pPos2->GetCoef());
+				monomio2.SetExp(pPos2->GetExp());
 			}
-
 			pPos2 = pPos2->GetSig();
 		} while (pPos2);
-		pPos2 = m_pCabecera;
-		pPos = pPos->GetSig();
-	} while (pPos);
+		CMonomio monomioSuma(monomio1.GetCoef() + monomio2.GetCoef(), i);
+		monomios.insert(monomios.begin(), monomioSuma);
+	}
+	for (int i = 0; i < monomios.size(); i++) {
+		if (monomios[i].GetCoef() == 0) {
+			monomios.erase(monomios.begin() + i);
+		}
+	}
 	CPolinomio polinomio2(monomios);
 	return  polinomio2;
 }
@@ -170,71 +167,71 @@ CPolinomio CPolinomio::operator+(const CPolinomio polinomio)
 
 CPolinomio CPolinomio::operator-(const CPolinomio polinomio)
 {
-	CTermino* pPos = m_pCabecera;
-	CTermino* pPos2 = polinomio.m_pCabecera;
+	CPolinomio resta(polinomio);
+	CPolinomio polinomio2(*this);
+
+	return  *this + -resta;
+}
+
+CPolinomio CPolinomio::operator+=(const CPolinomio polinomio) {
+	return *this + polinomio;
+}
+
+CPolinomio CPolinomio::operator-=(const CPolinomio polinomio) {
+	return *this - polinomio;
+}
+
+double CPolinomio::operator[](int nExp) {
+	CTermino *pPos = m_pCabecera;
+	do {
+		if (pPos->GetExp() == nExp) {
+			return pPos->GetCoef();
+		}
+		pPos = pPos->GetSig();
+	} while (pPos);
+	return 0;
+}
+
+double CPolinomio::operator() (double x) {
+	CTermino *pPos = m_pCabecera;
+	double resultado = 0;
+	do {
+		resultado = resultado + (pPos->GetCoef() * pow(x, pPos->GetExp()));
+		pPos = pPos->GetSig();
+	} while (pPos);
+	return resultado;
+}
+
+CPolinomio CPolinomio::operator*(const CPolinomio polinomio) {
+	CTermino *pPos = m_pCabecera;
+	CTermino *pPos2 = polinomio.m_pCabecera;
+
+	CMonomio monomio;
 	vector<CMonomio> monomios;
 
-	do
-	{
-		do
-		{
-			bool saltar = false;
-			if (pPos->GetExp() == pPos2->GetExp())
-			{
-				CMonomio monomio(pPos->GetCoef() - pPos2->GetCoef(), pPos->GetExp());
-				monomios.push_back(monomio);
-			}
-			else if (pPos->GetExp() > pPos2->GetExp())
-			{
-				saltar = false;
-				for (int i = 0; i < monomios.size(); i++)
-				{
-					if (pPos->GetExp() == monomios[i].GetExp())
-					{
-						saltar = true;
-					}
-				}
-				if (!saltar)
-				{
-					CMonomio monomio(pPos->GetCoef(), pPos->GetExp());
-					monomios.push_back(monomio);
-				}
-			}
-			else
-			{
-				saltar = false;
-				for (int i = 0; i < monomios.size(); i++)
-				{
-					if (pPos->GetExp() == monomios[i].GetExp())
-					{
-						saltar = true;
-					}
-				}
-				if (!saltar)
-				{
-					CMonomio monomio(pPos->GetCoef(), pPos->GetExp());
-					monomios.push_back(monomio);
-				}
-			}
+	do {
+		pPos2 = polinomio.m_pCabecera;
+		do {
+			monomio.SetCoef(pPos2->GetCoef() * pPos->GetCoef());
+			monomio.SetExp(pPos2->GetExp() + pPos->GetExp());
+
+			monomios.push_back(monomio);
 
 			pPos2 = pPos2->GetSig();
 		} while (pPos2);
-		pPos2 = m_pCabecera;
 		pPos = pPos->GetSig();
 	} while (pPos);
-	for(int i = 0; i< monomios.size();i++)
-	{
-		if (monomios[i].GetCoef() == 0)
-			monomios.erase(monomios.begin() + i);
-	}
 	CPolinomio polinomio2(monomios);
-	return  polinomio2;
+	return polinomio2;
+}
+
+CPolinomio CPolinomio::operator*=(const CPolinomio polinomio) {
+	return *this * polinomio;
 }
 
 
 
-
-int CPolinomio::MayorGrado()
+int CPolinomio::MayorGrado() const
 {
 	return m_pCabecera->GetExp();
 }

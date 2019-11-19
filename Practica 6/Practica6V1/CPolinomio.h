@@ -112,8 +112,15 @@ public:
 	CPolinomio operator-();
 	CPolinomio operator+(const CPolinomio polinomio);
 	CPolinomio operator-(const CPolinomio polinomio);
+	CPolinomio operator+=(const CPolinomio polinomio);
+	CPolinomio operator-=(const CPolinomio polinomio);
+	CPolinomio operator*(const CPolinomio polinomio);
+	CPolinomio operator*=(const CPolinomio polinomio);
+	double operator[](int nExp);
+	double operator()(double x);
 
-	int MayorGrado();
+
+	int MayorGrado() const;
 
 	// Operador asignacion
 	void MostrarPoli(ostream& os) const;
