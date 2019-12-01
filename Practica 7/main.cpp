@@ -1,1 +1,0 @@
-// TODO: Seguir leyendo a partir de "Se escribirá una nueva clase CRegistroDiario"
