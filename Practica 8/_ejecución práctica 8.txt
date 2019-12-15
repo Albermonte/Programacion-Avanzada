@@ -1,0 +1,467 @@
+EJEMPLO DE UNA SOLUCIÓN AL EJECUTAR LA PRÁCTICA 8.
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 1
+
+ Lista de nombres:
+
+	Nombre 1
+	Nombre 2
+	Nombre 3
+	Nombre 4
+	Nombre 5
+	Nombre 6
+	Nombre 7
+	Nombre 8
+	Nombre 9
+	Nombre 10
+
+ Vaciando Lista...
+
+ Lista vacia.
+
+*** AQUÍ SE MOSTRARÁ SU RESPUESTA A LA PREGUNTA ***
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 2
+
+Suma de una lista de 10 enteros consecutivos (del 1 al 10): 55
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 3
+
+ Constructor copia de CContrato ejecutado con exito.
+
+ CONTRATO ORIGINAL: 
+
+ Numero de serie: 12345
+ Descripcion: Prueba constructor copia
+ Fecha de finalizacion del contrato: 11-01-08
+ Poliza: 123456789
+ Valor de compra: 987654321
+
+ Siniestros sufridos: 
+ ...
+
+ CONTRATO COPIA: 
+
+ Numero de serie: 12345
+ Descripcion: Prueba constructor copia
+ Fecha de finalizacion del contrato: 11-01-08
+ Poliza: 123456789
+ Valor de compra: 987654321
+
+ Siniestros sufridos: 
+ ...
+
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 4
+
+ Creado un objeto CContrato prueba sin siniestros.
+
+ Agregado siniestro 1 (urgente).
+
+ Agregado siniestro 2 (normal).
+
+*** AQUÍ SE MOSTRARÁ SU RESPUESTA A LA PREGUNTA ***
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 5
+
+Datos del cliente: 
+
+ Nombre: Juan
+
+ Contratos: 
+ Numero de serie: 12345
+ Descripcion: Contrato 1 de Juan
+ Fecha de finalizacion del contrato: 12-11-08
+ Poliza: 1234567
+ Valor de compra: 23000
+
+ Siniestros sufridos: 
+ ...
+
+Presione una tecla para continuar . . . 
+
+Datos del cliente: 
+
+ Nombre: Juan
+
+ Contratos: 
+ Numero de serie: 12345
+ Descripcion: Contrato 1 de Juan
+ Fecha de finalizacion del contrato: 12-11-08
+ Poliza: 1234567
+ Valor de compra: 23000
+
+ Siniestros sufridos: 
+ ...
+
+Llamada explícita:
+*** AQUÍ SE MOSTRARÁ LA LLAMADA EXPLÍCITA UNA VEZ PROBADA ***
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 6
+
+*** AQUÍ SE MOSTRARÁ SU RESPUESTA A LA PREGUNTA ***
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 7
+
+ Ejemplo funcion Presupuestar de CSiniestro: 
+
+ Presupuesto de Siniestro Urgente Ejemplo: 32.5
+
+ Presupuesto de Siniestro Normal Ejemplo: 26.5
+
+*** AQUÍ SE MOSTRARÁ SU RESPUESTA A LA PREGUNTA ***
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 8
+
+ Datos del cliente: 
+
+ Nombre: Juan
+
+ Contratos: 
+ Numero de serie: 12345
+ Descripcion: Contrato 1 de Juan
+ Fecha de finalizacion del contrato: 12-11-08
+ Poliza: 1234567
+ Valor de compra: 23000
+
+ Siniestros sufridos: 
+
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 9
+
+*** AQUÍ SE MOSTRARÁ SU RESPUESTA A LA PREGUNTA ***
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 10
+
+ Codigo del siniestro: 111
+ Descripcion de la averia: XXX
+ Horas de mano de obra: 3
+ Coste de las piezas: 100
+ Coste total de reparacion: 250
+ Coste de la hora de mano de obra: 50
+
+*** AQUÍ SE MOSTRARÁ SU RESPUESTA A LA PREGUNTA ***
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 11
+
+*** AQUÍ SE MOSTRARÁ SU RESPUESTA A LA PREGUNTA ***
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 12
+
+*** AQUÍ SE MOSTRARÁ SU RESPUESTA A LA PREGUNTA ***
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 13
+
+ Funciones que son llamadas: 
+
+*** AQUÍ SE MOSTRARÁ SU RESPUESTA A LA PREGUNTA ***
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 14
+
+ CLIENTES DE LA EMPRESA: 
+
+ Nombre: Cliente 1
+ Nombre: Cliente 2
+ Nombre: Cliente 3
+
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 15
+
+CLIENTES DE LA EMPRESA GUARDADOS:
+
+Presione una tecla para continuar . . . 
+Cliente 1
+Cliente 2
+Cliente 3
+
+Presione una tecla para continuar . . . 
+
+ 1. Vaciar() de CLista.
+ 2. Operador [] CLista.
+ 3. Constructor copia de CContrato.
+ 4. AgregarSiniestro() de CContrato.
+ 5. Operador << CCliente.
+ 6. m_pSigCodigo static.
+ 7. Presupuestar() de CSiniestro y derivadas
+ 8. AgregarContrato() de CCliente
+ 9. total += seguros[i]
+10. Constructor CSiniestro y CSiniestroNormal
+11. const_cast<CLista<T>*>(this)->
+12. GetCoste()?
+13. c.AgregarSiniestro()
+14. Plantilla CEmpresa.
+15. Guardar empresa.
+16. Salir.
+
+	Elija una opcion: 16
+
+NO hay lagunas de memoria!! ;-)

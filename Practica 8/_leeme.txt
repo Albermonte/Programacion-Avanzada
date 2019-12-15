@@ -1,0 +1,45 @@
+ 1.- Cree un nuevo proyecto vacío.
+ 2.- Añada al proyecto las plantillas CNodoLista y CLista. Recuerde, el fichero .h
+     incluye al .cpp por lo que este no debe figurar en el fichero de
+     proyecto - explorador de proyectos.
+     - Haga que los .h incluyan los .cpp correspondientes.
+     - Incluya las declaraciones anticipadas de CNodoLista y CLista
+       en el lugar indicado en el código.
+     - Añada a las plantillas las definiciones que falten en los .cpp; de momento puede
+       añadirlas con un cuerpo vacío: {}, para evitar errores de compilación.
+ 3.- Añada al proyecto el fichero main.cpp, contiene la función main, y los archivos MemoryManager.
+ 4.- Comente el código de main.cpp y añada su propia función main para hacer una prueba
+     y poner a punto las plantillas añadidas. Por ejemplo:
+
+      #include <iostream>
+      #include "CLista.h"
+      #include "MemoryManager.h"
+
+      using namespace std;
+
+      int main()
+      {
+        CLista<int> lista;
+        lista.AgregarObjeto(10);
+        lista.AgregarObjeto(20);
+        int n = lista.GetPrimero();
+        cout << n << endl;
+        while (lista.TieneMas())
+        {
+          n = lista.GetActual();
+          cout << n << endl;
+        }
+
+        MemoryManager::dumpMemoryLeaks();
+        system("pause");
+      }
+
+ 5.- Añada al proyecto la clase CSiniestro y sus derivadas y haga una prueba para poner
+     a punto las clases añadidas.
+ 6.- Añada al proyecto la clase CContrato y haga una prueba para poner a punto las clases añadidas.
+ 7.- Añada al proyecto la clase CCliente y haga una prueba para poner a punto las clases añadidas.
+ 8.- Añada al proyecto la clase CUtils del espacio de nombres utils.
+ 9.- Revise que el fichero MemoryManager.h está añadido en todos los ficheros .cpp
+     que utilicen el operador new. Verifique al finalizar main si hay lagunas de memoria.
+10.- Finalmente, vuelva al código inicial de main.cpp y de respuesta a cada una de las preguntas formuladas
+     en la práctica. Los ficheros CEmpresa los utilizará en la pregunta 14.
