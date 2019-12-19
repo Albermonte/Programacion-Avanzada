@@ -20,8 +20,13 @@ public:
   std::string GetNombre() const { return m_Nombre; }
   void AgregarContrato(const CContrato& c);
   CLista<CContrato> GetContratos() const { return m_Contratos; }
+  int GetNumContratos();
+
+  void MostrarSiniestros() const;
+
 };
 
-#include "CCliente.cpp"
+ostream& operator<<(ostream& os, const CCliente& cliente);
+
 
 #endif

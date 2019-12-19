@@ -24,6 +24,5 @@ public:
   float GetPresupuesto() const;
 };
 
-#include "CSiniestroUrgente.cpp"
 
 #endif

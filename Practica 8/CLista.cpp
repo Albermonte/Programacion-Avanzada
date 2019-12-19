@@ -5,14 +5,28 @@ using namespace std;
 
 template<typename T> CLista<T>::CLista()
 {
-
+	m_Actual = nullptr;
+	m_Primero = nullptr;
+	m_Ultimo = nullptr;
 }
 
 
 
 template <class T> CLista<T>::CLista(const CLista<T>& Lista)
 {
+	m_Actual = nullptr;
+	m_Primero = nullptr;
+	m_Ultimo = nullptr;
+	*this = Lista;
+}
 
+template <class T> CLista<T>::CLista(const T& obj)
+{
+	m_Actual = nullptr;
+	m_Primero = nullptr;
+	m_Ultimo = nullptr;
+
+	AgregarObjeto(obj);
 }
 
 
@@ -69,15 +83,15 @@ template <typename T>
 T& CLista<T>::operator[](int index) const
 {
 	CNodoLista<T>* puntero = m_Primero;
-	int i = -1;
+	int size = -1;
 	while (puntero)
 	{
-		i++;
+		size++;
 		puntero = puntero->GetSigNodo();
-	} 
+	}
 	puntero = m_Primero;
-	if (index > i) throw CIndiceIncorrecto("Error: valor superior a maximo");
-	for(int i=0; i < index; i++)
+	if (index > size || index < 0) throw CIndiceIncorrecto("Error: valor superior a maximo");
+	for (int i = 0; i < index; i++)
 	{
 		puntero = puntero->GetSigNodo();
 	}
@@ -98,6 +112,10 @@ void CLista<T>::Vaciar()
 		delete m_Primero;
 		m_Primero = puntero;
 	} while (puntero);
+
+	m_Actual = nullptr;
+	m_Primero = nullptr;
+	m_Ultimo = nullptr;
 }
 
 

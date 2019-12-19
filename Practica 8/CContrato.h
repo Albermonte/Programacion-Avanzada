@@ -42,10 +42,7 @@ public:
   void MostrarSiniestros(std::ostream& os = std::cout);
 
   void BorrarSiniestros();
-
-  virtual CContrato* clonar();
 };
 
-#include "CContrato.cpp"
 
 #endif

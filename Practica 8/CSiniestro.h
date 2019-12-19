@@ -28,6 +28,5 @@ public:
 
 };
 
-#include "CSiniestro.cpp"
 
 #endif

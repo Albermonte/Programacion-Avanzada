@@ -15,6 +15,5 @@ public:
   float GetPresupuesto() const;
 };
 
-#include "CSiniestroNormal.cpp"
 
 #endif

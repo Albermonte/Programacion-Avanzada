@@ -1,7 +1,0 @@
-﻿  CPolinomio.cpp
-C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 6\Practica6V1\CPolinomio.h(55,21): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 6\Practica6V1\CPolinomio.cpp(147,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 6\Practica6V1\CPolinomio.cpp(190,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 6\Practica6V1\CPolinomio.cpp(207,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 6\Practica6V1\CPolinomio.cpp(226,18): warning C4018: '<': no coinciden signed/unsigned
-  Practica6V1.vcxproj -> C:\Users\Alberto\Desktop\Ing\Dropbox\TTC\Programación Avanzada\Practica 6\Practica6V1\Debug\Practica6V1.exe

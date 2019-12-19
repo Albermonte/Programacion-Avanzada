@@ -38,12 +38,6 @@ CContrato& CContrato::operator =(const CContrato& c)
 	return *this;
 }
 
-CContrato* CContrato::clonar()
-{
-	return new CContrato(*this);
-}
-
-
 
 // PREGUNTA 4: AgregarSiniestro de la clase CContrato
 void CContrato::AgregarSiniestro(const CSiniestro& s)
@@ -68,7 +62,7 @@ void CContrato::BorrarSiniestros()
 			try
 			{
 				delete m_Siniestros[i];
-			}catch (CIndiceIncorrecto) //CIndiceIncorrecto&
+			}catch (CIndiceIncorrecto&) //CIndiceIncorrecto&
 			{
 				break;
 			}
@@ -96,8 +90,12 @@ void CContrato::MostrarSiniestros(ostream& os)
 // Necesaria para PREGUNTA 5
 ostream& operator<<(ostream& os,  CContrato& c)
 {
-  // ...
-
+	cout << "Numero de serie: " << c.GetNumSerie() << endl
+		<< "Descripcion: " << c.GetDescripcion() << endl
+		<< "Fecha de finalizacion del contrato: " << c.GetFechaFin() << endl
+		<< "Poliza: " << c.GetPoliza() << endl
+		<< "Valor de compra: " << c.GetValorCom() << endl << endl << endl
+		<< "Siniestros sufridos: " << endl << endl;
 
   c.MostrarSiniestros();
   return os;

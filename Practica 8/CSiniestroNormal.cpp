@@ -16,7 +16,7 @@ CSiniestroNormal::CSiniestroNormal(const std::string& Desc)
 
 CSiniestroNormal* CSiniestroNormal::Clonar() const
 {
-  return 	new CSiniestroNormal(*this);
+  return new CSiniestroNormal(*this);
 }
 
 void CSiniestroNormal::Mostrar(ostream &os) const
